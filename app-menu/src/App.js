@@ -5,10 +5,7 @@ const App = () => {
   return (
     <div>     
     <Seccion
-    tag="Entrantes"
-    />
-    <Seccion
-    tag="Principales"
+    
     />
     </div>
     );

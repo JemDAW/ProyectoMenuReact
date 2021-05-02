@@ -3,15 +3,15 @@ import React from "react";
 const Item = (props) => {
     return(
     <div class="item">
-        <div class="right floated content">
-          <div class="ui button">Add</div>
+        <div className="right floated content">
+          <div className="ui button">Add</div>
         </div>
-        <div class="right floated content">
-        <a class="ui label">{props.precio}€</a>
+        <div className="right floated content">
+        <a className="ui label">{props.precio}€</a>
         </div>
-        <div class="content">
-        <a class="header">{props.nombre}</a>
-        <div class="description">{props.descripcion}</div>
+        <div className="content">
+        <a className="header">{props.nombre}</a>
+        <div className="description">{props.descripcion}</div>
         </div>
     </div>
     );

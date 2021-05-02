@@ -1,26 +1,31 @@
 import React from "react";
 import Item from "./Item";
+import useApiRestGet from "../hooks/useApiRestGet";
 
-const Seccion = (props) => {
+const Seccion = () => {
+    const results = useApiRestGet();
+       
+        var array = Object.values(results);
+        
 
+    const renderedResults = array.map((result) => {
     return(
-        <div class="ui segment">
-        <h2 class="ui left floated header">{props.tag}</h2>
-        <div class="ui middle aligned divided list">
-        <div class="ui clearing divider"></div>
+        <div className="ui segment">
+        <h2 className="ui left floated header">{result.tag}</h2>
+        <div className="ui middle aligned divided list">
+        <div className="ui clearing divider"></div>
             <Item
-            nombre= "Patatas Gajo"
-            descripcion= "Sabrosas patatas manualmente cortadas y fritas en aceite de girasol"
-            precio= "3,5"
-            />
-            <Item
-            nombre= "Hamburguesa"
-            descripcion= "Carne de ternera, tomate y lechuga con salsa roja"
-            precio= "4"
-            />
+            nombre= {result.nombre}
+            descripcion= {result.descripcion}
+            precio= {result.precio}
+            />     
         </div>
         </div>
     );
-}
+    });
+  return(
+      renderedResults
+  )
+};
 
 export default Seccion;
