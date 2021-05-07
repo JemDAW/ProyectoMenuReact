@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import Seccion from "./Componentes/Seccion";
+import Menu from "./Componentes/Menu";
 
 const App = () => {
   return (
     <div>     
-    <Seccion
+    <Menu
     
     />
     </div>

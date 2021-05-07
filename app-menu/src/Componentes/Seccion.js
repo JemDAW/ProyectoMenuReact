@@ -3,7 +3,7 @@ import Item from "./Item";
 import useApiRestGet from "../hooks/useApiRestGet";
 
 const Seccion = () => {
-    const results = useApiRestGet();
+    const results = useApiRestGetItems();
        
         var array = Object.values(results);
         

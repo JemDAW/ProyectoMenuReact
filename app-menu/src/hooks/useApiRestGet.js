@@ -1,23 +1,23 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
-
-
 
 const useApiRestGet = () => {
   const [results, setResults] = useState([]);
-  var resultados;
 
-    axios.get("http://127.0.0.1:8000/api/items")
-    .then(response =>  setResults(response.data))
-    .catch(error => console.log(error));
- 
+  useEffect(() => {
+    axios
+      .get("http://127.0.0.1:8000/api/items")
+      .then((response) => setResults(response.data))
+      .catch((error) => console.log(error));
+    /*.catch(
+        (error) =>
+          setResults([
+            { nombre: "Nom", descripcion: "Desc", precio: 52, tag: "Tag" },
+          ])      
+      );*/
+  }, []);
 
-   
-
-    console.log(results);
-    
-  //return results;
-  
+  return results;
 };
 
 export default useApiRestGet;
