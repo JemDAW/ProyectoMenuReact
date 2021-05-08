@@ -2,8 +2,9 @@ import React from "react";
 import Item from "./Item";
 import useApiRestGet from "../hooks/useApiRestGet";
 
-const Seccion = () => {
-    const results = useApiRestGetItems();
+const Seccion = (tags) => {
+    console.log(tags);
+    const results = useApiRestGet("items/"+tags.tag);
        
         var array = Object.values(results);
         
