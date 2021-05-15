@@ -7,6 +7,8 @@ const Seccion = (tags) => {
     const results = useApiRestGet("items/"+tags.tag);
        
         var array = Object.values(results);
+        //Coge el tag y hace que la primera letra sea mayúscula
+        var tituloSeccion= tags.tag.replace(/^\w/, (c) => c.toUpperCase());
         
 
     const renderedResults = array.map((result) => {
@@ -22,7 +24,7 @@ const Seccion = (tags) => {
     });
   return(
     <div className="ui segment">
-    <h2 className="ui left floated header">{tags.tag}</h2>
+    <h2 className="ui left floated header">{tituloSeccion}</h2>
     <div className="ui middle aligned divided list">
     <div className="ui clearing divider"></div>
       {renderedResults}
