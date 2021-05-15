@@ -21,7 +21,7 @@ const NewItem = () => {
     }
 
     return (
-        <div className="twelve wide column">
+        <div>
             <div className="ui card">
                 <div className="content">
                     <div className="ui form" id="form">

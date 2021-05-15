@@ -11,21 +11,23 @@ const Seccion = (tags) => {
 
     const renderedResults = array.map((result) => {
     return(
-        <div className="ui segment">
-        <h2 className="ui left floated header">{result.tag}</h2>
-        <div className="ui middle aligned divided list">
-        <div className="ui clearing divider"></div>
+        
             <Item
             nombre= {result.nombre}
             descripcion= {result.descripcion}
             precio= {result.precio}
             />     
-        </div>
-        </div>
+        
     );
     });
   return(
-      renderedResults
+    <div className="ui segment">
+    <h2 className="ui left floated header">{tags.tag}</h2>
+    <div className="ui middle aligned divided list">
+    <div className="ui clearing divider"></div>
+      {renderedResults}
+    </div>
+    </div>
   )
 };
 
