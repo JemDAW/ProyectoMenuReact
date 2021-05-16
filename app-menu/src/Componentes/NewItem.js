@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import axios from "axios";
+import Error from "./Error";
 
 const NewItem = () => {
 
@@ -8,21 +10,30 @@ const NewItem = () => {
     const [precio, setPrecio] = useState();
     const [descripcion, setDescripcion] = useState();
     const [tag, setTag] = useState();
-
-    const item = {
-        nombre: nombre,
-        precio: precio,
-        descripcion: descripcion,
-        tag: tag
-    }
+    const [errorMsg, setError] = useState([]);
 
     function añadirItem() {
-        console.log(item)
+        if (descripcion === undefined) {
+            setDescripcion(" ");
+        }
+        if (tag === undefined) {
+            setTag(null);
+        }
+        if (nombre !== undefined && precio !== undefined) {
+            axios.post("http://127.0.0.1:8000/api/item", {
+                nombre: nombre,
+                precio: precio,
+                descripcion: descripcion,
+                tag: tag
+            })
+                .then(response => console.log(response)).catch(error => console.log(error));
+        }else{
+            setError("Error: Nombre o precio no introducidos");
+        }
     }
 
     return (
-        <div>
-            <div className="ui card">
+            <div className="ui fluid card">
                 <div className="content">
                     <div className="ui form" id="form">
                         <h4 className="ui dividing header">Nuevo Item</h4>
@@ -51,9 +62,11 @@ const NewItem = () => {
                         </div>
                         <button className="ui button" onClick={() => añadirItem()}>Añadir Item</button>
                     </div>
+                    <Error
+                            mensaje={errorMsg}
+                        />
                 </div>
             </div>
-        </div>
     );
 }
 
