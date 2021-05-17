@@ -1,14 +1,30 @@
 import React from "react";
 import ItemList from "./ItemList";
+import NewEmpleado from "./NewEmpleado";
 import NewItem from "./NewItem";
 
 
 const Admin = () => {
     return (
-        <div className="four wide column">
-            <h3 className="ui dividing header">Administrar</h3>
-            <NewItem />
-            <ItemList />
+        <div>
+            <h1 className="ui centered dividing header">Administrar</h1>
+            <div className="ui grid">
+                <div className="four column row">
+                        <div className="column">
+                            <NewItem />
+                        </div>
+                        <div className="column">
+                            <ItemList />
+                        </div>
+
+                        <div className="column">
+                            <NewEmpleado />
+                        </div>
+                        <div className="column">
+                            <ItemList />
+                        </div>
+                </div>
+            </div>
         </div>
     );
 }

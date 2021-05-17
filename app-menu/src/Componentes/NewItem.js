@@ -4,7 +4,6 @@ import Error from "./Error";
 
 const NewItem = () => {
 
-    //TODO: Comprobaciones y llamada Axios
 
     const [nombre, setNombre] = useState();
     const [precio, setPrecio] = useState();

@@ -9,19 +9,18 @@ const App = () => {
   return (
     <div>
       <LoginCard />
+
       <Route path="/login">
         <LogIn />
       </Route>
-      <div className="ui grid">
-        <div className="one wide column"></div>
-        <div className="ten wide column">
-        <h3 className="ui dividing header">Menú</h3>
-      <Menu />
-      </div>
+      
+      <Route path="/">
+        <Menu />
+      </Route>
+
       <Route path="/admin">
         <Admin />
       </Route>
-      </div>
     </div>
   );
 };
