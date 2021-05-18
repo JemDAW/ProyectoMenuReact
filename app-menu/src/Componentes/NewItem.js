@@ -4,20 +4,15 @@ import Error from "./Error";
 
 const NewItem = () => {
 
+//Le doy a descripción y tag un valor inicial, por si el valor no se incluye al añadir el item
 
     const [nombre, setNombre] = useState();
     const [precio, setPrecio] = useState();
-    const [descripcion, setDescripcion] = useState();
-    const [tag, setTag] = useState();
+    const [descripcion, setDescripcion] = useState(" ");
+    const [tag, setTag] = useState(null);
     const [errorMsg, setError] = useState([]);
 
     function añadirItem() {
-        if (descripcion === undefined) {
-            setDescripcion(" ");
-        }
-        if (tag === undefined) {
-            setTag(null);
-        }
         if (nombre !== undefined && precio !== undefined) {
             axios.post("http://127.0.0.1:8000/api/item", {
                 nombre: nombre,
@@ -25,7 +20,7 @@ const NewItem = () => {
                 descripcion: descripcion,
                 tag: tag
             })
-                .then(response => console.log(response)).catch(error => console.log(error));
+                .then(response => window.location.reload()).catch(error => console.log(error));
         }else{
             setError("Error: Nombre o precio no introducidos");
         }
