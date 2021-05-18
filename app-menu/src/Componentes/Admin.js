@@ -1,4 +1,5 @@
 import React from "react";
+import EmpleadoList from "./EmpleadoList";
 import ItemList from "./ItemList";
 import NewEmpleado from "./NewEmpleado";
 import NewItem from "./NewItem";
@@ -21,7 +22,7 @@ const Admin = () => {
                             <NewEmpleado />
                         </div>
                         <div className="column">
-                            <ItemList />
+                            <EmpleadoList />
                         </div>
                 </div>
             </div>
