@@ -7,17 +7,15 @@ const ItemList = () => {
     const results = useApiRestGet("items");
     var array = Object.values(results);
 
-    console.log(array);
-
     const renderedItems = array.map((result) => {
         return(
-            
+            <div className="item" key={result.id}>
                 <Item
                 nombre= {result.nombre}
                 descripcion= {result.descripcion}
                 precio= {result.precio}
                 />     
-            
+            </div>
         );
         });
 

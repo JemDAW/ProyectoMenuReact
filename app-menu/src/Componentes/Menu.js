@@ -14,10 +14,11 @@ const Menu = () => {
 
     const renderedResults = tagsArray.map((result) => {
         return (
-
+            <div key={result.tag}>
             <Seccion
                 tag={result.tag}
             />
+            </div>
         );
     });
     return (

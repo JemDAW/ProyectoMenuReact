@@ -55,7 +55,6 @@ const LogIn = () => {
             axios.get("http://127.0.0.1:8000/api/login/" + mail).then(response => setResults(response))
                 .catch(error => setError("Error: Debes introducir un correo"));
 
-            console.log(results);
             if (results.length !== 0) {
 
                 if (results.data.length !== 0) {

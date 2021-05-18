@@ -3,7 +3,6 @@ import Item from "./Item";
 import useApiRestGet from "../hooks/useApiRestGet";
 
 const Seccion = (tags) => {
-    console.log(tags);
     const results = useApiRestGet("items/"+tags.tag);
        
         var array = Object.values(results);
@@ -13,13 +12,13 @@ const Seccion = (tags) => {
 
     const renderedResults = array.map((result) => {
     return(
-        
+      <div className="item" key={result.id}>
             <Item
             nombre= {result.nombre}
             descripcion= {result.descripcion}
             precio= {result.precio}
             />     
-        
+      </div>
     );
     });
   return(
