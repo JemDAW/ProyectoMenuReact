@@ -2,7 +2,8 @@ import React from "react";
 import useApiRestGet from "../hooks/useApiRestGet";
 import Seccion from "./Seccion";
 
-const Menu = () => {
+const Menu = (props) => {
+    const { onAdd } = props;
     const tagsArray = useApiRestGet("tags");
 
     if (tagsArray.length === 6) {
@@ -16,6 +17,7 @@ const Menu = () => {
         return (
             <div key={result.tag}>
             <Seccion
+                onAdd={onAdd}
                 tag={result.tag}
             />
             </div>

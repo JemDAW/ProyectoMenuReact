@@ -2,18 +2,21 @@ import React from "react";
 import Item from "./Item";
 import useApiRestGet from "../hooks/useApiRestGet";
 
-const Seccion = (tags) => {
-    const results = useApiRestGet("items/"+tags.tag);
+const Seccion = (props) => {
+  const { onAdd } = props;
+    const results = useApiRestGet("items/"+props.tag);
        
         var array = Object.values(results);
         //Coge el tag y hace que la primera letra sea mayúscula
-        var tituloSeccion= tags.tag.replace(/^\w/, (c) => c.toUpperCase());
+        var tituloSeccion= props.tag.replace(/^\w/, (c) => c.toUpperCase());
         
 
     const renderedResults = array.map((result) => {
     return(
       <div className="item" key={result.id}>
             <Item
+            onAdd={onAdd}
+            id={result.id}
             nombre= {result.nombre}
             descripcion= {result.descripcion}
             precio= {result.precio}
