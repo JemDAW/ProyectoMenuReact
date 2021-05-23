@@ -1,4 +1,4 @@
-import React,  { useState }  from "react";
+import React, { useState } from "react";
 import Menu from "./Componentes/Menu";
 import Admin from "./Componentes/Admin";
 import LogIn from "./Componentes/LogIn";
@@ -39,10 +39,16 @@ const App = () => {
       <Route path="/login">
         <LogIn />
       </Route>
-      
+
       <Route path="/">
-        <Menu onAdd={onAdd}/>
-        <Cesta cartItems={cartItems} onAdd={onAdd} onRemove={onRemove}/>
+        <div className="ui grid">
+          <div className="two column row">
+            <Menu onAdd={onAdd} />
+            <div className="four wide column">
+            <Cesta cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} />
+            </div>
+          </div>
+        </div>
       </Route>
 
       <Route path="/admin">

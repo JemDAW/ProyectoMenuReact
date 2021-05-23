@@ -14,6 +14,7 @@ const LogIn = () => {
     function renderComponent() {
         if (!empleado) {
             return (
+                <div className="loginCard">
                 <div className="ui card">
                     <div className="content">
                         <div className="ui form" id="form">
@@ -31,6 +32,7 @@ const LogIn = () => {
                             mensaje={errorMsg}
                         />
                     </div>
+                </div>
                 </div>
             )
         } else {

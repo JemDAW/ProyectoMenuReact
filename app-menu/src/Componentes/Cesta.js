@@ -8,38 +8,40 @@ export default function Cesta(props) {
 
 
     return (
-        <div class="ui card">
-            <div class="content">
-                <div class="header">Carrito</div>
-                <div class="meta"> {cartItems.length === 0 && <div>El Carro esta Vacio</div>}</div>
-                <div class="description">
+        <div className="ui card">
+            <div className="content">
+                <div className="header">
+                    <h3 className="ui centered dividing header">Carrito</h3>
+                    </div>
+                <div className="meta"> {cartItems.length === 0 && <div>El Carro esta Vacio</div>}</div>
+                <div className="description">
                     {cartItems.map((item) => (
                         <div key={item.id}>
-                            <p>{item.nombre}</p>
+                            <p className="amarillo">{item.nombre}</p>
                             <p>{item.qty} x {item.precio.toFixed(2)}€</p>
-                            <div class="ui two buttons">
-                                <button class="ui green basic button" onClick={() => onAdd(item)}>+</button>
-                                <button class="ui red basic button" onClick={() => onRemove(item)}>-</button>
+                            <div className="ui two buttons">
+                                <button className="ui green basic button" onClick={() => onAdd(item)}>+</button>
+                                <button className="ui red basic button" onClick={() => onRemove(item)}>-</button>
                             </div>
                         </div>
                     )
                     )
                     }
                 </div>
-                <div class="description">
+                <div className="description">
                     {cartItems.length !== 0 && (
                         <>
                             <hr></hr>
                             <div>
-                                <p>Precio Total</p>
+                                <p className="amarillo">Precio Total</p>
                                 <p>{itemsPrice.toFixed(2)}</p>
                             </div>
                             <hr></hr>
                             <div>
-                                <button class="ui vertical animated button" onClick={() => alert('Implementar metodo pago')}>
-                                    <div class="hidden content">Pagar</div>
-                                    <div class="visible content">
-                                        <i aria-hidden="true" class="shop icon"></i>
+                                <button className="ui vertical animated button" onClick={() => alert('Implementar metodo pago')}>
+                                    <div className="hidden content">Pagar</div>
+                                    <div className="visible content">
+                                        <i aria-hidden="true" className="shop icon"></i>
                                     </div>
                                 </button>
                             </div>

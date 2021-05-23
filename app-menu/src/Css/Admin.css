@@ -21,3 +21,9 @@ select.ui.dropdown{
 .ui.grid{
     padding: 0 5px 0 10px;
 }
+p.amarillo{
+    color: #edaf45; 
+}
+div.loginCard{
+    padding: 0 0 0 15px;
+}

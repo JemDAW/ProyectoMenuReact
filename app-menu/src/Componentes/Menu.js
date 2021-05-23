@@ -16,21 +16,17 @@ const Menu = (props) => {
     const renderedResults = tagsArray.map((result) => {
         return (
             <div key={result.tag}>
-            <Seccion
-                onAdd={onAdd}
-                tag={result.tag}
-            />
+                <Seccion
+                    onAdd={onAdd}
+                    tag={result.tag}
+                />
             </div>
         );
     });
     return (
-        <div>
+        <div className="twelve wide column">
             <h1 className="ui centered dividing header">Menú</h1>
-            <div className="ui grid">
-                <div className="twelve wide centered column">
-                    {renderedResults}
-                </div>
-            </div>
+            {renderedResults}
         </div>
     )
 };
