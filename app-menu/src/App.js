@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from 'react';
+import React,  { useState }  from "react";
 import Menu from "./Componentes/Menu";
 import Admin from "./Componentes/Admin";
 import LogIn from "./Componentes/LogIn";

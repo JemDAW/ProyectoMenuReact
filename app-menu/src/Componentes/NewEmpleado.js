@@ -18,7 +18,7 @@ const NewEmpleado = () => {
                 password: pass,
                 tipo_usuario: tipo
             })
-                .then(response => console.log(response)).catch(error => console.log(error));
+                .then(response =>  window.location.reload()).catch(error => console.log(error));
         } else {
             setError("Error: Nombre, email o contraseña no introducidos");
         }

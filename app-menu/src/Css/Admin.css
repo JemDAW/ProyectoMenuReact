@@ -1,0 +1,23 @@
+.ui.dividing.header, .ui.button{
+    color: #edaf45;
+}
+.ui.button{
+    background-color: #222222;
+}
+.ui.dividing.header{
+    border-bottom: 1px solid #666666;
+}
+.ui.card{
+    box-shadow: 0 1px 3px 0 #666666,0 0 0 1px #666666;
+}
+.ui.form input:not([type]), .ui.form input[type="date"], .ui.form input[type="datetime-local"], .ui.form input[type="email"],
+.ui.form input[type="file"], .ui.form input[type="number"], .ui.form input[type="password"], .ui.form input[type="search"],
+.ui.form input[type="tel"], .ui.form input[type="text"], .ui.form input[type="time"], .ui.form input[type="url"], .ui.form textarea{
+    border: 1px solid #666666;
+}
+select.ui.dropdown{
+    border: 1px solid #666666;
+}
+.ui.grid{
+    padding: 0 5px 0 10px;
+}

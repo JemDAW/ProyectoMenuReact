@@ -33,19 +33,19 @@ const EmpleadoForm = (props) => {
                     <h4 className="ui dividing header">Modificar Empleado</h4>
                     <div className="field">
                         <label>Nombre:</label>
-                        <input type="text" onChange={(e) => setNombre(e.target.value)} name="nombre" placeholder={empleado === 0 ? "-" : empleado.nombre} required></input>
+                        <input type="text" onChange={(e) => setNombre(e.target.value)} name="nombre" placeholder={empleado === 0 ? "-" : empleado.nombre}></input>
                     </div>
                     <div className="field">
                         <label>Email:</label>
-                        <input type="email" onChange={(e) => setEmail(e.target.value)} name="email" placeholder={empleado === 0 ? "-" : empleado.email} required></input>
+                        <input type="email" onChange={(e) => setEmail(e.target.value)} name="email" placeholder={empleado === 0 ? "-" : empleado.email}></input>
                     </div>
                     <div className="field">
                         <label>Contraseña:</label>
-                        <input type="text" onChange={(e) => setPass(e.target.value)} name="pass" placeholder={empleado === 0 ? "-" : empleado.password} required></input>
+                        <input type="text" onChange={(e) => setPass(e.target.value)} name="pass" placeholder={empleado === 0 ? "-" : empleado.password}></input>
                     </div>
                     <div className="field">
                         <label>Tipo de usuario:</label>
-                        <input type="text" onChange={(e) => setTipo(e.target.value)} placeholder={empleado === 0 ? "-" : empleado.tipo_usuario} required></input>
+                        <input type="text" onChange={(e) => setTipo(e.target.value)} placeholder={empleado === 0 ? "-" : empleado.tipo_usuario}></input>
                     </div>
                     <button className="ui button" onClick={() => modificarEmpleado()}>Modificar Empleado</button>
                 </div>

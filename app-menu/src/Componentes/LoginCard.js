@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "./Link";
+import "../Css/LoginCard.css"
 
 const LoginCard = () => {
   return (

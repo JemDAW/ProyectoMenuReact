@@ -1,0 +1,13 @@
+.ui.list > .item .header{
+    color: #edaf45;
+}
+.ui.list > .item .description{
+    color: #222222;
+}
+.ui.card > .content > .header{
+    color: #edaf45;
+}
+.ui.label{
+    background-color: #edaf45;
+    color: white;
+}

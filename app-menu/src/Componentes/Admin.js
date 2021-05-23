@@ -1,9 +1,9 @@
 import React from "react";
-import EmpleadoList from "./EmpleadoList";
 import ItemList from "./ItemList";
 import ModifyEmpleado from "./ModifyEmpleado";
 import NewEmpleado from "./NewEmpleado";
 import NewItem from "./NewItem";
+import "../Css/Admin.css"
 
 
 const Admin = () => {
