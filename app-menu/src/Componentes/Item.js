@@ -3,7 +3,6 @@ import "../Css/List.css";
 
 const Item = (props) => {
   const {onAdd} = props;
-  console.log(props);
   return(
     <div className="item">
         <div className="right floated content">

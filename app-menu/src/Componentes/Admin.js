@@ -1,5 +1,5 @@
 import React from "react";
-import ItemList from "./ItemList";
+import ModifyItem from "./ModifyItem";
 import ModifyEmpleado from "./ModifyEmpleado";
 import NewEmpleado from "./NewEmpleado";
 import NewItem from "./NewItem";
@@ -25,8 +25,8 @@ const Admin = () => {
                 </div>
                 <div className="four column row">
                     <div className="column"></div>
-                    <div className="column">
-                        <ItemList />
+                    <div className="eight wide column">
+                        <ModifyItem />
                     </div>
                 </div>
             </div>
