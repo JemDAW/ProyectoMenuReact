@@ -37,13 +37,15 @@ const LogIn = () => {
             )
         } else {
             return (
+                <div className="loginCard">
                 <div className="ui card">
                     <div className="content">
-                        <p className="header">Bienvenido {empleado}! </p>
+                        <p className="header">Bienvenido {empleado.nombre}! </p>
                         <Link href="/admin" className="item">
                             Administrar
-                    </Link>
+                        </Link>
                     </div>
+                </div>
                 </div>
             )
         }
@@ -60,7 +62,7 @@ const LogIn = () => {
             if (results.length !== 0) {
 
                 if (results.data.length !== 0) {
-                    results.data[0].password === pass ? setEmpleado(results.data[0].nombre) : setError("Error: Contraseña incorrecta")
+                    results.data[0].password === pass ? setEmpleado(results.data[0]) : setError("Error: Contraseña incorrecta")
                 } else if (results.data.length === 0) {
                     setError("Error: Email de empleado inexistente")
                 }
@@ -76,7 +78,7 @@ const LogIn = () => {
 
     }, [empleado]);
 
-    return renderComponent();
+    return [renderComponent, empleado];
 
 }
 

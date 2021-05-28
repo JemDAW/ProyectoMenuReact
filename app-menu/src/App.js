@@ -7,6 +7,8 @@ import Route from "./Componentes/Route";
 import Cesta from "./Componentes/Cesta";
 
 const App = () => {
+  const [renderComponent, empleado] = LogIn();
+
   const [cartItems, setCartItems] = useState([]);
   const onAdd = (product) => {
     const exist = cartItems.find((x) => x.id === product.id);
@@ -37,7 +39,7 @@ const App = () => {
       <LoginCard />
 
       <Route path="/login">
-        <LogIn />
+      {renderComponent()}
       </Route>
 
       <Route path="/">
@@ -52,7 +54,8 @@ const App = () => {
       </Route>
 
       <Route path="/admin">
-        <Admin />
+        <Admin 
+        empleado= {empleado}/>
       </Route>
     </div>
   );

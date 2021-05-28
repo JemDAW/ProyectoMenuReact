@@ -6,7 +6,7 @@ const Item = (props) => {
   return(
     <div className="item">
         <div className="right floated content">
-          <div className="ui button" onClick={()=>onAdd(props)}>Add</div>
+          <div className="ui button" onClick={()=>onAdd(props)}>Añadir</div>
         </div>
         <div className="right floated content">
         <p className="ui label">{props.precio}€</p>
