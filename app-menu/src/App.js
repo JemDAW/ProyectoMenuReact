@@ -5,10 +5,13 @@ import LogIn from "./Componentes/LogIn";
 import LoginCard from "./Componentes/LoginCard";
 import Route from "./Componentes/Route";
 import Cesta from "./Componentes/Cesta";
+import axios from "axios";
+
+
 
 const App = () => {
   const [renderComponent, empleado] = LogIn();
-
+  
   const [cartItems, setCartItems] = useState([]);
   const onAdd = (product) => {
     const exist = cartItems.find((x) => x.id === product.id);
@@ -34,6 +37,35 @@ const App = () => {
       );
     }
   };
+
+  
+  
+
+
+  const onPay = (product, price, mesa) => {
+    
+    console.log(price);
+    console.log(mesa);
+    const fecha = new Date();
+    var dia = fecha.getFullYear() + '-' + (fecha.getMonth()+1) + '-' + fecha.getDate();
+    
+    var hora = fecha.getHours() + ':' + fecha.getMinutes() + ':' + fecha.getSeconds();
+    
+    console.log(dia);
+    console.log(hora);
+    if (window.confirm("Confirmar Pago")) {
+    axios.post("http://127.0.0.1:8000/api/pedido", {
+      mesa: mesa,
+      precio_total: price,
+
+    }).then(alert("Pedido Creado Correctamente"))
+    .catch(error => {
+      console.log(error.message);
+    })
+
+    }
+  
+  }
   return (
     <div>
       <LoginCard />
@@ -47,7 +79,7 @@ const App = () => {
           <div className="two column row">
             <Menu onAdd={onAdd} />
             <div className="four wide column">
-            <Cesta cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} />
+            <Cesta cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} onPay={onPay} />
             </div>
           </div>
         </div>
