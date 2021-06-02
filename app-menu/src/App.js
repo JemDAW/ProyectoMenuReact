@@ -44,15 +44,7 @@ const App = () => {
 
   const onPay = (product, price, mesa) => {
     
-    console.log(price);
-    console.log(mesa);
-    const fecha = new Date();
-    var dia = fecha.getFullYear() + '-' + (fecha.getMonth()+1) + '-' + fecha.getDate();
-    
-    var hora = fecha.getHours() + ':' + fecha.getMinutes() + ':' + fecha.getSeconds();
-    
-    console.log(dia);
-    console.log(hora);
+
     if (window.confirm("Confirmar Pago")) {
     axios.post("http://127.0.0.1:8000/api/pedido", {
       mesa: mesa,
@@ -64,7 +56,7 @@ const App = () => {
     })
 
     }
-  
+      window.location.reload();
   }
   return (
     <div>
