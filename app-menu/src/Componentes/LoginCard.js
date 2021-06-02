@@ -8,6 +8,11 @@ const LoginCard = () => {
       <Link href="/login" className="item">
         Log In
       </Link>
+      <div className="right menu">
+      <Link href="/" className="item">
+      <img src="https://i.ibb.co/68sHdmz/pastamania.png" alt="pastamania" className="ui small image"/>
+      </Link>
+      </div>
     </div>
   );
 };
