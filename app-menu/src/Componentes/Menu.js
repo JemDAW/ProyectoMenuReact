@@ -24,7 +24,7 @@ const Menu = (props) => {
         );
     });
     return (
-        <div className="twelve wide column">
+        <div className="ten wide column">
             <h1 className="ui centered dividing header">Menú</h1>
             {renderedResults}
         </div>

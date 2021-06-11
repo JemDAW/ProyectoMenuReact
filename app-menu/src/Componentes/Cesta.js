@@ -46,8 +46,6 @@ export default function Cesta(props) {
                                 <a className="item" onClick={() => setMesa("2")}>2</a>
                                 <a className="item" onClick={() => setMesa("3")}>3</a>
                                 <a className="item" onClick={() => setMesa("4")}>4</a>
-                                <a className="item" onClick={() => setMesa("5")}>5</a>
-                                <a className="item" onClick={() => setMesa("6")}>6</a>
                             </div>
                             <div>
                                 <p>Mesa Actual: {mesa}</p>

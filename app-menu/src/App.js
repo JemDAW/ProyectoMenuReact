@@ -70,7 +70,7 @@ const App = () => {
         <div className="ui grid">
           <div className="two column row">
             <Menu onAdd={onAdd} />
-            <div className="four wide column">
+            <div className="five wide column">
             <Cesta cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} onPay={onPay} />
             </div>
           </div>
